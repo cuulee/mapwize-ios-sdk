@@ -77,7 +77,9 @@
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     [dic setObject:[NSNumber numberWithDouble:_coordinate.latitude] forKey:@"lat"];
     [dic setObject:[NSNumber numberWithDouble:_coordinate.longitude] forKey:@"lon"];
-    [dic setObject:_floor forKey:@"floor"];
+    if (_floor != nil) {
+        [dic setObject:_floor forKey:@"floor"];
+    }
     return dic;
 }
 

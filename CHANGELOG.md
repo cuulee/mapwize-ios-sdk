@@ -1,5 +1,11 @@
 # CHANGELOG
 
+## Version 2.3.5
+
+- Added didEnterVenue and didExitVenue in map delegate
+- Better handling of NSNull object
+- Improved synchronized getter 
+
 ## Version 2.3.4
 
 - Fixed mainColor affects userPosition

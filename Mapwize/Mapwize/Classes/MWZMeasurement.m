@@ -15,13 +15,27 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _latitude = [[dic objectForKey:@"latitude"] doubleValue];
-    _longitude = [[dic objectForKey:@"longitude"] doubleValue];
-    _floor = [dic objectForKey:@"floor"];
-    _accuracy = [dic objectForKey:@"accuracy"];
-    _validUntil = [dic objectForKey:@"validUntil"];
-    _validity = [dic objectForKey:@"validity"];
-    _source = [dic objectForKey:@"source"];
+    if (![[dic objectForKey:@"latitude"] isEqual:NSNull.null]) {
+        _latitude = [[dic objectForKey:@"latitude"] doubleValue];
+    }
+    if (![[dic objectForKey:@"longitude"] isEqual:NSNull.null]) {
+        _longitude = [[dic objectForKey:@"longitude"] doubleValue];
+    }
+    if (![[dic objectForKey:@"floor"] isEqual:NSNull.null]) {
+        _floor = [dic objectForKey:@"floor"];
+    }
+    if (![[dic objectForKey:@"accuracy"] isEqual:NSNull.null]) {
+        _accuracy = [dic objectForKey:@"accuracy"];
+    }
+    if (![[dic objectForKey:@"validUntil"] isEqual:NSNull.null]) {
+        _validUntil = [dic objectForKey:@"validUntil"];
+    }
+    if (![[dic objectForKey:@"validity"] isEqual:NSNull.null]) {
+        _validity = [dic objectForKey:@"validity"];
+    }
+    if (![[dic objectForKey:@"source"] isEqual:NSNull.null]) {
+        _source = [dic objectForKey:@"source"];
+    }
     return self;
 }
 

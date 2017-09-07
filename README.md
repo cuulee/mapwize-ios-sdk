@@ -206,6 +206,8 @@ then implement the following methods
 - (void) map:(MWZMapView*) map didClickOnVenue:(MWZVenue*) venue;
 - (void) map:(MWZMapView*) map didClickLong: (MWZCoordinate*) latlon;
 - (void) map:(MWZMapView*) map didClickOnMarker: (MWZCoordinate*) marker;
+- (void) map:(MWZMapView*) map didEnterVenue:(MWZVenue*) venue;
+- (void) map:(MWZMapView*) map didExitVenue:(MWZVenue*) venue;
 - (void) map:(MWZMapView*) map didChangeFloor:(NSNumber*) floor;
 - (void) map:(MWZMapView*) map didChangeFloors:(NSArray*) floors;
 - (void) map:(MWZMapView*) map didChangeZoom:(NSNumber*) floor;

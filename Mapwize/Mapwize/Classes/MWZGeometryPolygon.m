@@ -21,12 +21,16 @@
     self = [super init];
     _type = @"Polygon";
     NSMutableArray* coordinates = [[NSMutableArray alloc] init];
-    NSArray* coordinatesJson = dictionary[@"coordinates"][0];
-    for (NSArray* coordinateJson in coordinatesJson) {
-        MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:coordinateJson];
-        [coordinates addObject:coordinate];
+    NSArray* coords = dictionary[@"coordinates"];
+    if (coords && ![coords isEqual:NSNull.null]) {
+        NSArray* coordinatesJson = coords[0];
+        for (NSArray* coordinateJson in coordinatesJson) {
+            MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:coordinateJson];
+            [coordinates addObject:coordinate];
+        }
+        _coordinates = [NSArray arrayWithArray:coordinates];
     }
-    _coordinates = [NSArray arrayWithArray:coordinates];
+    
     return self;
 }
 
@@ -68,7 +72,10 @@
     [dic setObject:_type forKey:@"type"];
     NSMutableArray* coords = [[NSMutableArray alloc] init];
     for (MWZCoordinate* coord in _coordinates) {
-        [coords addObject:[coord toArray]];
+        NSArray* arr = [coord toArray];
+        if (arr) {
+            [coords addObject:arr];
+        }
     }
     NSMutableArray* allCoord = [[NSMutableArray alloc] init];
     [allCoord addObject:coords];

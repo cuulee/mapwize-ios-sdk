@@ -4,9 +4,15 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:_iconUrl forKey:@"iconUrl"];
-    [dic setObject:_iconAnchor forKey:@"iconAnchor"];
-    [dic setObject:_iconSize forKey:@"iconSize"];
+    if (_iconUrl) {
+        [dic setObject:_iconUrl forKey:@"iconUrl"];
+    }
+    if (_iconAnchor) {
+        [dic setObject:_iconAnchor forKey:@"iconAnchor"];
+    }
+    if (_iconSize) {
+        [dic setObject:_iconSize forKey:@"iconSize"];
+    }
     return dic;
 }
     

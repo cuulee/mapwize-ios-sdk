@@ -32,12 +32,24 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _latitude = [dic objectForKey:@"lat"];
-    _longitude = [dic objectForKey:@"lon"];
-    _floor = [dic objectForKey:@"floor"];
-    _placeId = [dic objectForKey:@"placeId"];
-    _venueId = [dic objectForKey:@"venueId"];
-    _placeListId =[dic objectForKey:@"placeListId"];
+    if (![[dic objectForKey:@"lat"] isEqual:NSNull.null]) {
+        _latitude = [dic objectForKey:@"lat"];
+    }
+    if (![[dic objectForKey:@"lon"] isEqual:NSNull.null]) {
+        _longitude = [dic objectForKey:@"lon"];
+    }
+    if (![[dic objectForKey:@"floor"] isEqual:NSNull.null]) {
+        _floor = [dic objectForKey:@"floor"];
+    }
+    if (![[dic objectForKey:@"placeId"] isEqual:NSNull.null]) {
+        _placeId = [dic objectForKey:@"placeId"];
+    }
+    if (![[dic objectForKey:@"venueId"] isEqual:NSNull.null]) {
+        _venueId = [dic objectForKey:@"venueId"];
+    }
+    if (![[dic objectForKey:@"placeListId"] isEqual:NSNull.null]) {
+        _placeListId =[dic objectForKey:@"placeListId"];
+    }
     return self;
 }
 

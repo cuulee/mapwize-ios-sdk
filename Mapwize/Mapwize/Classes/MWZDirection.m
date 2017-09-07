@@ -6,15 +6,30 @@
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
     
-    _from = [[MWZDirectionResponsePoint alloc] initFromDictionary:[dic objectForKey:@"from"]];
-    _to = [[MWZDirectionResponsePoint alloc] initFromDictionary:[dic objectForKey:@"to"]];
-    _distance =  [[dic objectForKey:@"distance"] doubleValue];
-    _traveltime =  [[dic objectForKey:@"traveltime"] doubleValue];
-    _bounds = [[MWZBounds alloc] initWithArray:[dic objectForKey:@"bounds"]];
-    _waypoints = [MWZParser positionsFromArray:[dic objectForKey:@"waypoints"]];
-    _route = [MWZParser routesFromArray:[dic objectForKey:@"route"]];
-    _subdirections = [MWZParser subdirectionsFromArray:[dic objectForKey:@"subdirections"]];
-    
+    if (![[dic objectForKey:@"from"] isEqual:NSNull.null]) {
+        _from = [[MWZDirectionResponsePoint alloc] initFromDictionary:[dic objectForKey:@"from"]];
+    }
+    if (![[dic objectForKey:@"to"] isEqual:NSNull.null]) {
+        _to = [[MWZDirectionResponsePoint alloc] initFromDictionary:[dic objectForKey:@"to"]];
+    }
+    if (![[dic objectForKey:@"distance"] isEqual:NSNull.null]) {
+        _distance =  [[dic objectForKey:@"distance"] doubleValue];
+    }
+    if (![[dic objectForKey:@"traveltime"] isEqual:NSNull.null]) {
+        _traveltime =  [[dic objectForKey:@"traveltime"] doubleValue];
+    }
+    if (![[dic objectForKey:@"bounds"] isEqual:NSNull.null]) {
+        _bounds = [[MWZBounds alloc] initWithArray:[dic objectForKey:@"bounds"]];
+    }
+    if (![[dic objectForKey:@"waypoints"] isEqual:NSNull.null]) {
+        _waypoints = [MWZParser positionsFromArray:[dic objectForKey:@"waypoints"]];
+    }
+    if (![[dic objectForKey:@"route"] isEqual:NSNull.null]) {
+        _route = [MWZParser routesFromArray:[dic objectForKey:@"route"]];
+    }
+    if (![[dic objectForKey:@"subdirections"] isEqual:NSNull.null]) {
+        _subdirections = [MWZParser subdirectionsFromArray:[dic objectForKey:@"subdirections"]];
+    }
     return self;
 }
 

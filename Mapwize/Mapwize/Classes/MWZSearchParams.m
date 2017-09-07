@@ -4,16 +4,16 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    if (_query != nil) {
+    if (_query) {
         [dic setObject:_query forKey:@"query"];
     }
-    if (_venueId != nil) {
+    if (_venueId) {
         [dic setObject:_venueId forKey:@"venueId"];
     }
-    if (_organizationId != nil) {
+    if (_organizationId) {
         [dic setObject:_organizationId forKey:@"organizationId"];
     }
-    if (_universeId != nil) {
+    if (_universeId) {
         [dic setObject:_universeId forKey:@"universeId"];
     }
     return dic;

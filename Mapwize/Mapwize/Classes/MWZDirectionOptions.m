@@ -9,8 +9,6 @@
     return self;
 }
 
-
-
 - (NSString*) toStringJSON {
     NSData *optionsJson = [NSJSONSerialization dataWithJSONObject:[self toDictionary] options:(NSJSONWritingOptions) 0 error:nil];
     return [[NSString alloc] initWithData:optionsJson encoding:NSUTF8StringEncoding];

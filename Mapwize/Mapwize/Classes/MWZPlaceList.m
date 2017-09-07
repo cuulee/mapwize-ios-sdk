@@ -19,7 +19,9 @@
 
 - (NSDictionary*) toDirectionDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:_identifier forKey:@"placeListId"];
+    if (_identifier) {
+        [dic setObject:_identifier forKey:@"placeListId"];
+    }
     return dic;
 }
 

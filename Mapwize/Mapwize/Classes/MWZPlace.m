@@ -5,28 +5,68 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _identifier = [dic objectForKey:@"_id"];
-    _name = [dic objectForKey:@"name"];
-    _alias = [dic objectForKey:@"alias"];
-    _venueId = [dic objectForKey:@"venueId"];
-    _venue = [[MWZVenue alloc] initFromDictionary:[dic objectForKey:@"venue"]];
-    _floor = [dic objectForKey:@"floor"];
-    _translations = [MWZTranslation parseTranslations:[dic objectForKey:@"translations"]];
-    _order = [dic objectForKey:@"order"];
-    _placeTypeId = [dic objectForKey:@"placeTypeId"];
-    _placeType = [[MWZPlaceType alloc] initFromDictionary:[dic objectForKey:@"placeType"]];
-    _isPublished = [[dic objectForKey:@"isPublished"] boolValue];
-    _isSearchable = [[dic objectForKey:@"isSearchable"] boolValue];
-    _isVisible = [[dic objectForKey:@"isVisible"] boolValue];
-    _isClickable = [[dic objectForKey:@"isClickable"] boolValue];
-    _tags = [dic objectForKey:@"tags"];
-    _style = [[MWZStyle alloc] initFromDictionary:[dic objectForKey:@"style"]];
-    _geometry = [MWZGeometryFactory geometryWithDictionary:[dic objectForKey:@"geometry"]];
-    _marker = [[MWZCoordinate alloc] initWithDictionary:[dic objectForKey:@"marker"]];
-    _marker.floor = _floor;
-    _entrance = [[MWZCoordinate alloc] initWithDictionary:[dic objectForKey:@"entrance"]];
-    _entrance.floor = _floor;
-    _data = [dic objectForKey:@"data"];
+    if (![[dic objectForKey:@"_id"] isEqual:NSNull.null]) {
+        _identifier = [dic objectForKey:@"_id"];
+    }
+    if (![[dic objectForKey:@"name"] isEqual:NSNull.null]) {
+        _name = [dic objectForKey:@"name"];
+    }
+    if (![[dic objectForKey:@"alias"] isEqual:NSNull.null]) {
+        _alias = [dic objectForKey:@"alias"];
+    }
+    if (![[dic objectForKey:@"venueId"] isEqual:NSNull.null]) {
+        _venueId = [dic objectForKey:@"venueId"];
+    }
+    if (![[dic objectForKey:@"venue"] isEqual:NSNull.null]) {
+        _venue = [[MWZVenue alloc] initFromDictionary:[dic objectForKey:@"venue"]];
+    }
+    if (![[dic objectForKey:@"floor"] isEqual:NSNull.null]) {
+        _floor = [dic objectForKey:@"floor"];
+    }
+    if (![[dic objectForKey:@"translations"] isEqual:NSNull.null]) {
+        _translations = [MWZTranslation parseTranslations:[dic objectForKey:@"translations"]];
+    }
+    if (![[dic objectForKey:@"order"] isEqual:NSNull.null]) {
+        _order = [dic objectForKey:@"order"];
+    }
+    if (![[dic objectForKey:@"placeTypeId"] isEqual:NSNull.null]) {
+        _placeTypeId = [dic objectForKey:@"placeTypeId"];
+    }
+    if (![[dic objectForKey:@"placeType"] isEqual:NSNull.null]) {
+        _placeType = [[MWZPlaceType alloc] initFromDictionary:[dic objectForKey:@"placeType"]];
+    }
+    if (![[dic objectForKey:@"isPublished"] isEqual:NSNull.null]) {
+        _isPublished = [[dic objectForKey:@"isPublished"] boolValue];
+    }
+    if (![[dic objectForKey:@"isSearchable"] isEqual:NSNull.null]) {
+        _isSearchable = [[dic objectForKey:@"isSearchable"] boolValue];
+    }
+    if (![[dic objectForKey:@"isVisible"] isEqual:NSNull.null]) {
+        _isVisible = [[dic objectForKey:@"isVisible"] boolValue];
+    }
+    if (![[dic objectForKey:@"isClickable"] isEqual:NSNull.null]) {
+        _isClickable = [[dic objectForKey:@"isClickable"] boolValue];
+    }
+    if (![[dic objectForKey:@"tags"] isEqual:NSNull.null]) {
+        _tags = [dic objectForKey:@"tags"];
+    }
+    if (![[dic objectForKey:@"style"] isEqual:NSNull.null]) {
+        _style = [[MWZStyle alloc] initFromDictionary:[dic objectForKey:@"style"]];
+    }
+    if (![[dic objectForKey:@"geometry"] isEqual:NSNull.null]) {
+        _geometry = [MWZGeometryFactory geometryWithDictionary:[dic objectForKey:@"geometry"]];
+    }
+    if (![[dic objectForKey:@"marker"] isEqual:NSNull.null]) {
+        _marker = [[MWZCoordinate alloc] initWithDictionary:[dic objectForKey:@"marker"]];
+        _marker.floor = _floor;
+    }
+    if (![[dic objectForKey:@"entrance"] isEqual:NSNull.null]) {
+        _entrance = [[MWZCoordinate alloc] initWithDictionary:[dic objectForKey:@"entrance"]];
+        _entrance.floor = _floor;
+    }
+    if (![[dic objectForKey:@"data"] isEqual:NSNull.null]) {
+        _data = [dic objectForKey:@"data"];
+    }
     return self;
 }
 
@@ -69,7 +109,8 @@
     if (_translations != nil) {
         NSMutableArray* transationArray = [[NSMutableArray alloc] init];
         for (MWZTranslation* tr in _translations) {
-            [transationArray addObject:[tr toDictionary]];
+            NSDictionary* d = [tr toDictionary];
+            [transationArray addObject:d];
         }
         [dic setObject:transationArray forKey:@"translations"];
     }
@@ -79,7 +120,9 @@
 
 - (NSDictionary*) toDirectionDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:_identifier forKey:@"placeId"];
+    if (_identifier) {
+        [dic setObject:_identifier forKey:@"placeId"];
+    }
     return dic;
 }
 

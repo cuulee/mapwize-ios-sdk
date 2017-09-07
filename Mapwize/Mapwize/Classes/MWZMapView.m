@@ -5,7 +5,7 @@
 #import "MWZParser.h"
 
 #define SERVER_URL @"https://www.mapwize.io"
-#define IOS_SDK_VERSION @"2.3.4"
+#define IOS_SDK_VERSION @"2.3.5"
 #define IOS_SDK_NAME @"IOS SDK"
 
 @implementation MWZMapView {
@@ -75,6 +75,10 @@
     [js appendString:@"map.on('floorChange', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, floor:this._floor});});"];
     [js appendString:@"map.on('placeClick', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, place:e.place});});"];
     [js appendString:@"map.on('venueClick', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, venue:e.venue});});"];
+    
+    [js appendString:@"map.on('venueEnter', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, venue:e.venue});});"];
+    [js appendString:@"map.on('venueExit', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, venue:e.venue});});"];
+    
     [js appendString:@"map.on('markerClick', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, lat:e.latlng.lat, lon:e.latlng.lng, floor:e.floor});});"];
     [js appendString:@"map.on('moveend', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, center:map.getCenter()});});"];
     [js appendString:@"map.on('userPositionChange', function(e){window.webkit.messageHandlers.MWZMapEvent.postMessage({type:e.type, userPosition:e.userPosition});});"];
@@ -206,6 +210,16 @@
             [self.delegate map:self didClickOnVenue:[[MWZVenue alloc] initFromDictionary:body[@"venue"]]];
         }
     }
+    else if ([body[@"type"] isEqualToString:@"venueEnter"]) {
+        if ([self.delegate respondsToSelector:@selector(map:didEnterVenue:)]) {
+            [self.delegate map:self didEnterVenue:[[MWZVenue alloc] initFromDictionary:body[@"venue"]]];
+        }
+    }
+    else if ([body[@"type"] isEqualToString:@"venueExit"]) {
+        if ([self.delegate respondsToSelector:@selector(map:didExitVenue:)]) {
+            [self.delegate map:self didExitVenue:[[MWZVenue alloc] initFromDictionary:body[@"venue"]]];
+        }
+    }
     else if ([body[@"type"] isEqualToString:@"markerClick"]) {
         double lat = [body[@"lat"] doubleValue];
         double lng = [body[@"lon"] doubleValue];
@@ -323,10 +337,12 @@
 
 - (void) setFloor: (NSNumber*) floor {
     [self executeJS:[NSString stringWithFormat:@"map.setFloor(%@)", floor ]];
+    _floor = floor;
 }
 
 - (void) setZoom:(NSNumber *)zoom {
     [self executeJS:[NSString stringWithFormat:@"map.setZoom(%@)", zoom ]];
+    _zoom = zoom;
 }
 
 - (NSNumber*) getZoom {
@@ -357,6 +373,7 @@
 
 - (void) setFollowUserMode: (BOOL) follow {
     [self executeJS:[NSString stringWithFormat:@"map.setFollowUserMode(%@)", (follow?@"true":@"false") ]];
+    _followUserModeON = follow;
 }
 
 - (void) centerOnUser: (NSNumber*) zoom {
@@ -402,6 +419,7 @@
         NSString* userPositionString = [[NSString alloc] initWithData:userPositionJSON encoding:NSUTF8StringEncoding];
         [self executeJS:[NSString stringWithFormat:@"Mapwize.Location.setUserPosition(%@)", userPositionString ]];
     }
+    _userPosition = userPosition;
 }
 
 - (void) setUserPositionWithLatitude: (NSNumber*) latitude longitude:(NSNumber*) longitude floor:(NSNumber*) floor accuracy:(NSNumber*) accuracy {

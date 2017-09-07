@@ -19,8 +19,10 @@
 - (instancetype) initWithDictionary:(NSDictionary*) dictionary {
     self = [super init];
     _type = @"Point";
-    MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:dictionary[@"coordinates"]];
-    _coordinate = coordinate;
+    if (![dictionary[@"coordinates"] isEqual:NSNull.null]) {
+        MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:dictionary[@"coordinates"]];
+        _coordinate = coordinate;
+    }
     return self;
 }
 
@@ -40,7 +42,10 @@
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
     [dic setObject:_type forKey:@"type"];
-    [dic setObject:[_coordinate toArray] forKey:@"coordinates"];
+    NSArray* arr = [_coordinate toArray];
+    if (arr) {
+        [dic setObject:arr forKey:@"coordinates"];
+    }
     return dic;
 }
 

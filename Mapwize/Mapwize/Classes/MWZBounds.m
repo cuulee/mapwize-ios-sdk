@@ -25,15 +25,23 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[_southWest toDictionary] forKey:@"southWest"];
-    [dic setObject:[_northEast toDictionary] forKey:@"northEast"];
+    NSDictionary* sw = [_southWest toDictionary];
+    NSDictionary* ne = [_northEast toDictionary];
+    if (sw && ne) {
+        [dic setObject:[_southWest toDictionary] forKey:@"southWest"];
+        [dic setObject:[_northEast toDictionary] forKey:@"northEast"];
+    }
     return dic;
 }
 
 - (NSArray*) toArray {
     NSMutableArray* arr = [[NSMutableArray alloc] init];
-    [arr addObject:[_southWest toLatLongArray]];
-    [arr addObject:[_northEast toLatLongArray]];
+    NSArray* sw = [_southWest toLatLongArray];
+    NSArray* ne = [_northEast toLatLongArray];
+    if (sw && ne) {
+        [arr addObject:sw];
+        [arr addObject:ne];
+    }
     return arr;
 }
 

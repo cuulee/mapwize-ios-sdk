@@ -132,4 +132,12 @@
     NSLog(@"didStopDirections %@", infos);
 }
 
+- (void) map:(MWZMapView*) map didEnterVenue: (MWZVenue*) venue {
+    NSLog(@"didEnterVenue %@", venue);
+}
+
+- (void) map:(MWZMapView*) map didExitVenue: (MWZVenue*) venue {
+    NSLog(@"didExitVenue %@", venue);
+}
+
 @end

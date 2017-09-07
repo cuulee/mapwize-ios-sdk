@@ -27,6 +27,8 @@
 - (void) map:(MWZMapView*) map didStartDirections: (NSString*) infos;
 - (void) map:(MWZMapView*) map didStopDirections: (NSString*) infos;
 - (void) map:(MWZMapView*) map didFailWithError: (NSError *)error;
+- (void) map:(MWZMapView*) map didEnterVenue: (MWZVenue*) venue;
+- (void) map:(MWZMapView*) map didExitVenue: (MWZVenue*) venue;
 
 @end
 

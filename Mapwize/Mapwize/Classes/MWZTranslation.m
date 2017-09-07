@@ -4,10 +4,18 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _title = [dic objectForKey:@"title"];
-    _subTitle = [dic objectForKey:@"subTitle"];
-    _details = [dic objectForKey:@"details"];
-    _language = [dic objectForKey:@"language"];
+    if (![[dic objectForKey:@"title"] isEqual:NSNull.null]) {
+        _title = [dic objectForKey:@"title"];
+    }
+    if (![[dic objectForKey:@"subTitle"] isEqual:NSNull.null]) {
+        _subTitle = [dic objectForKey:@"subTitle"];
+    }
+    if (![[dic objectForKey:@"details"] isEqual:NSNull.null]) {
+        _details = [dic objectForKey:@"details"];
+    }
+    if (![[dic objectForKey:@"language"] isEqual:NSNull.null]) {
+        _language = [dic objectForKey:@"language"];
+    }
     return self;
 }
 
