@@ -1,32 +1,8 @@
 # CHANGELOG
 
-## Version 2.3.4
+## Version 2.2.1
 
-- Fixed mainColor affects userPosition
-- Fixed cookieHandler error 
-
-## Version 2.3.3
-
-- Added default init method for Geometry
-- Fixed style for direction markers
-
-## Version 2.3.2
-
-- Fixed bug with malformated style
-- Fixed bug on loadMapWithOptions when the application name contains spaces
-
-## Version 2.3.1
-
-- Fixed bug with center map option
-- Fixed bug with bounds map option
-- Fixed bug with initial zoom not returned in getZoom
-
-## Version 2.3.0
-
-- Added support for external places
-- Added displayFloorControl map option
-- Added mainColor map option
-- Added support for custom marker icon
+- Added kill webview mechanism
 
 ## Version 2.2.0
 

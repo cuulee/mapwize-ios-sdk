@@ -7,7 +7,6 @@
     self.locationEnabled = YES;
     self.beaconsEnabled = NO;
     self.showUserPositionControl = YES;
-    self.displayFloorControl = YES;
     return self;
 }
 
@@ -23,7 +22,7 @@
         [optionsDic setObject:[_bounds toArray] forKey:@"bounds"];
     }
     if (_center != nil) {
-        [optionsDic setObject:[_center toLatLongArray] forKey:@"center"];
+        [optionsDic setObject:[_center toArray] forKey:@"center"];
     }
     if (_zoom != nil) {
         [optionsDic setObject:_zoom forKey:@"zoom"];
@@ -40,15 +39,8 @@
     if (_minZoom != nil) {
         [optionsDic setObject:_minZoom forKey:@"minZoom"];
     }
-    if (_displayMarkerOptions != nil) {
-        [optionsDic setObject:[_displayMarkerOptions toDictionary] forKey:@"displayMarkerOptions"];
-    }
-    if (_mainColor != nil) {
-        [optionsDic setObject:_mainColor forKey:@"mainColor"];
-    }
     [optionsDic setObject:@0 forKey:@"useBrowserLocation"];
     [optionsDic setObject:[NSNumber numberWithBool:_showUserPositionControl] forKey:@"showUserPositionControl"];
-    [optionsDic setObject:[NSNumber numberWithBool:_displayFloorControl] forKey:@"displayFloorControl"];
     [optionsDic setObject:@0 forKey:@"zoomControl"];
     
     return optionsDic;

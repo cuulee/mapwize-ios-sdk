@@ -2,40 +2,17 @@
 
 @implementation MWZStyle
 
-BOOL markerDisplayDefined = false;
-
-- (instancetype)initFromDictionary:(NSDictionary*)dictionary {
+- (instancetype) initWithDictionary:(NSDictionary*) dictionary {
     self = [super init];
     _markerUrl = [dictionary objectForKey:@"markerUrl"];
     _markerDisplay = [[dictionary objectForKey:@"markerDisplay"] boolValue];
     _strokeColor = [dictionary objectForKey:@"strokeColor"];
-    if ([_strokeColor isEqualToString:@""]) {
-        _strokeColor = nil;
-    }
     _strokeOpacity = [dictionary objectForKey:@"strokeOpacity"];
-    if (![_strokeOpacity isKindOfClass:NSClassFromString(@"NSNumber")]) {
-        _strokeOpacity = nil;
-    }
     _strokeWidth = [dictionary objectForKey:@"strokeWidth"];
-    if (![_strokeWidth isKindOfClass:NSClassFromString(@"NSNumber")]) {
-        _strokeWidth = nil;
-    }
     _fillColor = [dictionary objectForKey:@"fillColor"];
-    if ([_fillColor isEqualToString:@""]) {
-        _fillColor = nil;
-    }
     _fillOpacity = [dictionary objectForKey:@"fillOpacity"];
-    if (![_fillOpacity isKindOfClass:NSClassFromString(@"NSNumber")]) {
-        _fillOpacity = nil;
-    }
     _labelBackgroundColor = [dictionary objectForKey:@"labelBackgroundColor"];
-    if ([_labelBackgroundColor isEqualToString:@""]) {
-        _labelBackgroundColor = nil;
-    }
     _labelBackgroundOpacity = [dictionary objectForKey:@"labelBackgroundOpacity"];
-    if (![_labelBackgroundOpacity isKindOfClass:NSClassFromString(@"NSNumber")]) {
-        _labelBackgroundOpacity = nil;
-    }
     return self;
 }
 
@@ -44,9 +21,7 @@ BOOL markerDisplayDefined = false;
     if (_markerUrl != nil) {
         [dic setObject:_markerUrl forKey:@"markerUrl"];
     }
-    if (markerDisplayDefined) {
-        [dic setObject:[NSNumber numberWithBool:_markerDisplay] forKey:@"markerDisplay"];
-    }
+    [dic setObject:[NSNumber numberWithBool:_markerDisplay] forKey:@"markerDisplay"];
     if (_strokeColor != nil) {
         [dic setObject:_strokeColor forKey:@"strokeColor"];
     }
@@ -69,11 +44,6 @@ BOOL markerDisplayDefined = false;
         [dic setObject:_labelBackgroundOpacity forKey:@"labelBackgroundOpacity"];
     }
     return dic;
-}
-
-- (void) setMarkerDisplay:(BOOL)markerDisplay {
-    _markerDisplay = markerDisplay;
-    markerDisplayDefined = true;
 }
 
 - (NSString*) toJSONString {

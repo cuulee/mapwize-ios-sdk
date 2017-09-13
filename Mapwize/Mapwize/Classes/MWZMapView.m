@@ -5,7 +5,7 @@
 #import "MWZParser.h"
 
 #define SERVER_URL @"https://www.mapwize.io"
-#define IOS_SDK_VERSION @"2.3.4"
+#define IOS_SDK_VERSION @"2.2.1"
 #define IOS_SDK_NAME @"IOS SDK"
 
 @implementation MWZMapView {
@@ -25,12 +25,20 @@
 
 }
 
+- (void) willMoveToSuperview: (UIView *) newSuperview{
+    if (newSuperview == nil){
+        [_webview removeFromSuperview];
+        _webview = nil;
+    }
+}
+
 - (void) loadMapWithOptions: (MWZMapOptions*) options {
     _isWebviewLoaded = NO;
     _jsQueue = [[NSMutableArray alloc] init];
     callbackMemory = [[NSMutableDictionary alloc] init];
     _universesByVenues = [[NSMutableDictionary alloc] init];
 
+    
     /*
      * Loads the webview
      */
@@ -45,7 +53,7 @@
     _webview.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
     [self addSubview:_webview];
     
-    NSBundle* podBundle = [NSBundle bundleForClass: [MWZMapView classForCoder]];
+    NSBundle* podBundle = [NSBundle bundleForClass: [self classForCoder]];
     NSURL* bundleURL = [podBundle URLForResource:@"Mapwize" withExtension: @"bundle"];
     NSBundle* mapwizeBundle = [NSBundle bundleWithURL:bundleURL];
     
@@ -62,7 +70,6 @@
      * Handles the options
      */
     _options = options;
-    _zoom = options.zoom;
     NSString* optionsString = [options toJSONString];
     /*
      * Set up the map with the options
@@ -511,15 +518,7 @@
     [self executeJS:[NSString stringWithFormat:@"map.removePromotePlace('%@');", placeId]];
 }
 
-- (void) setExternalPlaces: (NSArray<MWZPlace*>*) externalPlaces {
-    NSMutableArray* array = [[NSMutableArray alloc] init];
-    for (MWZPlace* p in externalPlaces) {
-        [array addObject:[p toDictionary]];
-    }
-    NSData *data = [NSJSONSerialization dataWithJSONObject:array options:NSJSONWritingPrettyPrinted error:nil];
-    NSString* json = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-    [self executeJS:[NSString stringWithFormat:@"map.setExternalPlaces(%@);", json]];
-}
+
 
 
 /* Ignore places */

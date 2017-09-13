@@ -3,8 +3,6 @@
 #import "MWZStyle.h"
 #import "MWZGeometry.h"
 #import "MWZDirectionPoint.h"
-#import "MWZPlaceType.h"
-#import "MWZVenue.h"
 
 
 @interface MWZPlace : NSObject <MWZDirectionPoint>
@@ -17,7 +15,6 @@
 @property(nonatomic, strong) NSArray<MWZTranslation*>* translations;
 @property(nonatomic, strong) NSNumber* order;
 @property(nonatomic, strong) NSString* placeTypeId;
-@property(nonatomic, strong) MWZPlaceType* placeType;
 @property(nonatomic) BOOL isPublished;
 @property(nonatomic) BOOL isSearchable;
 @property(nonatomic) BOOL isVisible;
@@ -27,9 +24,8 @@
 @property(nonatomic, strong) MWZGeometry* geometry;
 @property(nonatomic, strong) MWZCoordinate* marker;
 @property(nonatomic, strong) MWZCoordinate* entrance;
-@property(nonatomic, strong) MWZVenue* venue;
 
-@property(nonatomic, strong) NSDictionary* data;
+@property NSDictionary* data;
 
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic;
@@ -38,6 +34,5 @@
 
 - (NSDictionary*) toDirectionDictionary;
 - (NSString*) toDirectionStringJSON;
-- (NSDictionary*) toDictionary;
 
 @end

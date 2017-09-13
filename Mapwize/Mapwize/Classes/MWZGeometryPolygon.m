@@ -2,13 +2,6 @@
 
 @implementation MWZGeometryPolygon
 
-- (instancetype) init {
-    self = [super init];
-    _type = @"Polygon";
-    return self;
-}
-    
-    
 - (instancetype) initWithCoordinates:(NSArray*) coordinates {
     self = [super init];
     _type = @"Polygon";
@@ -68,11 +61,9 @@
     [dic setObject:_type forKey:@"type"];
     NSMutableArray* coords = [[NSMutableArray alloc] init];
     for (MWZCoordinate* coord in _coordinates) {
-        [coords addObject:[coord toArray]];
+        [coords addObject:[coord toDictionary]];
     }
-    NSMutableArray* allCoord = [[NSMutableArray alloc] init];
-    [allCoord addObject:coords];
-    [dic setObject:allCoord forKey:@"coordinates"];
+    [dic setObject:coords forKey:@"coordinates"];
     return dic;
 }
 
