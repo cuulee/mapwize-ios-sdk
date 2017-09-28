@@ -4,19 +4,26 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    if (_query != nil) {
-        [dic setObject:_query forKey:@"query"];
+    @try {
+        if (_query) {
+            [dic setObject:_query forKey:@"query"];
+        }
+        if (_venueId) {
+            [dic setObject:_venueId forKey:@"venueId"];
+        }
+        if (_organizationId) {
+            [dic setObject:_organizationId forKey:@"organizationId"];
+        }
+        if (_universeId) {
+            [dic setObject:_universeId forKey:@"universeId"];
+        }
     }
-    if (_venueId != nil) {
-        [dic setObject:_venueId forKey:@"venueId"];
+    @catch (NSException* e) {
+        @throw e;
     }
-    if (_organizationId != nil) {
-        [dic setObject:_organizationId forKey:@"organizationId"];
+    @finally {
+        return dic;
     }
-    if (_universeId != nil) {
-        [dic setObject:_universeId forKey:@"universeId"];
-    }
-    return dic;
 }
     
 @end

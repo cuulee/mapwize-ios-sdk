@@ -4,7 +4,9 @@
 
 - (instancetype) initWithDictionary:(NSDictionary*) dic {
     self = [super initWithDictionary:dic];
-    _accuracy = [dic objectForKey:@"accuracy"];
+    if (![[dic objectForKey:@"accuracy"] isEqual:NSNull.null]) {
+        _accuracy = [dic objectForKey:@"accuracy"];
+    }
     return self;
 }
 

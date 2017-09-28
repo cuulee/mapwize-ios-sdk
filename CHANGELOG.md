@@ -1,8 +1,43 @@
 # CHANGELOG
 
-## Version 2.2.1
+## Version 2.3.6
 
-- Added kill webview mechanism
+- Added exceptions
+- Fixed to dictionary issues
+
+## Version 2.3.5
+
+- Added didEnterVenue and didExitVenue in map delegate
+- Better handling of NSNull object
+- Improved synchronized getter 
+
+## Version 2.3.4
+
+- Fixed mainColor affects userPosition
+- Fixed cookieHandler error 
+
+## Version 2.3.3
+
+- Added default init method for Geometry
+- Fixed style for direction markers
+
+## Version 2.3.2
+
+- Fixed bug with malformated style
+- Fixed bug on loadMapWithOptions when the application name contains spaces
+
+## Version 2.3.1
+
+- Fixed bug with center map option
+- Fixed bug with bounds map option
+- Fixed bug with initial zoom not returned in getZoom
+
+## Version 2.3.0
+
+- Added support for external places
+- Added displayFloorControl map option
+- Added mainColor map option
+- Added support for custom marker icon
 
 ## Version 2.2.0
 

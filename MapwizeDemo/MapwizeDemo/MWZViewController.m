@@ -24,6 +24,14 @@
         [_locationManager requestWhenInUseAuthorization];
     }
 
+    MWZPlace* place = [[MWZPlace alloc] init];
+    @try {
+        [place toDictionary];
+    }
+    @catch (NSException* e) {
+        NSLog(@"Exception %@", e);
+    }
+    
     MWZApiManager* manager = [MWZApiManager sharedManager];
     [manager getAccessWithAccessKey:@"demo" success:^{
         [manager getVenueWithId:@"56c2ea3402275a0b00fb00ac" success:^(MWZVenue *venue) {
@@ -130,6 +138,14 @@
 
 - (void )map:(MWZMapView*) map didStopDirections: (NSString*) infos {
     NSLog(@"didStopDirections %@", infos);
+}
+
+- (void) map:(MWZMapView*) map didEnterVenue: (MWZVenue*) venue {
+    NSLog(@"didEnterVenue %@", venue);
+}
+
+- (void) map:(MWZMapView*) map didExitVenue: (MWZVenue*) venue {
+    NSLog(@"didExitVenue %@", venue);
 }
 
 @end

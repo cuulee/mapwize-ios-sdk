@@ -19,8 +19,17 @@
 
 - (NSDictionary*) toDirectionDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:_identifier forKey:@"placeListId"];
-    return dic;
+    @try {
+        if (_identifier) {
+            [dic setObject:_identifier forKey:@"placeListId"];
+        }
+    }
+    @catch (NSException* e) {
+        @throw e;
+    }
+    @finally {
+        return dic;
+    }
 }
 
 - (NSString*) toDirectionStringJSON {

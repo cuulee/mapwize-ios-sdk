@@ -4,9 +4,15 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _identifier = [dic objectForKey:@"_id"];
-    _name = [dic objectForKey:@"name"];
-    _alias = [dic objectForKey:@"alias"];
+    if (![[dic objectForKey:@"_id"] isEqual:NSNull.null]) {
+        _identifier = [dic objectForKey:@"_id"];
+    }
+    if (![[dic objectForKey:@"name"] isEqual:NSNull.null]) {
+        _name = [dic objectForKey:@"name"];
+    }
+    if (![[dic objectForKey:@"alias"] isEqual:NSNull.null]) {
+        _alias = [dic objectForKey:@"alias"];
+    }
     return self;
 }
 
