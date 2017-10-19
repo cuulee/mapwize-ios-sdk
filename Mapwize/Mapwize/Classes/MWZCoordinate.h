@@ -5,7 +5,7 @@
 @interface MWZCoordinate : NSObject <MWZDirectionPoint>
 
 @property (nonatomic, assign) CLLocationCoordinate2D coordinate;
-@property (nonatomic, assign) NSNumber* floor;
+@property (nonatomic, strong) NSNumber* floor;
 
 - (instancetype) initWithLatitude:(double) latitude longitude:(double) longitude floor:(NSNumber*) floor;
 
@@ -24,6 +24,7 @@
 - (NSDictionary*) toDictionary;
 
 - (NSArray*) toArray;
+- (NSArray*) toLatLongArray;
 
 - (NSDictionary*) toDirectionDictionary;
 

@@ -2,6 +2,12 @@
 
 @implementation MWZGeometryPoint
 
+- (instancetype) init {
+    self = [super init];
+    _type = @"Point";
+    return self;
+}
+    
 - (instancetype) initWithCoordinate:(MWZCoordinate*) coordinate {
     self = [super init];
     _type = @"Point";
@@ -13,8 +19,10 @@
 - (instancetype) initWithDictionary:(NSDictionary*) dictionary {
     self = [super init];
     _type = @"Point";
-    MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:dictionary[@"coordinates"]];
-    _coordinate = coordinate;
+    if (![dictionary[@"coordinates"] isEqual:NSNull.null]) {
+        MWZCoordinate* coordinate = [[MWZCoordinate alloc] initWithArray:dictionary[@"coordinates"]];
+        _coordinate = coordinate;
+    }
     return self;
 }
 
@@ -33,9 +41,19 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:_type forKey:@"type"];
-    [dic setObject:[_coordinate toDictionary] forKey:@"coordinates"];
-    return dic;
+    @try {
+        [dic setObject:_type forKey:@"type"];
+        NSArray* arr = [_coordinate toArray];
+        if (arr) {
+            [dic setObject:arr forKey:@"coordinates"];
+        }
+    }
+    @catch (NSException* e) {
+        @throw e;
+    }
+    @finally {
+        return dic;
+    }
 }
 
 - (NSString *)description {

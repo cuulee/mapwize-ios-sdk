@@ -32,36 +32,55 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _latitude = [dic objectForKey:@"lat"];
-    _longitude = [dic objectForKey:@"lon"];
-    _floor = [dic objectForKey:@"floor"];
-    _placeId = [dic objectForKey:@"placeId"];
-    _venueId = [dic objectForKey:@"venueId"];
-    _placeListId =[dic objectForKey:@"placeListId"];
+    if (![[dic objectForKey:@"lat"] isEqual:NSNull.null]) {
+        _latitude = [dic objectForKey:@"lat"];
+    }
+    if (![[dic objectForKey:@"lon"] isEqual:NSNull.null]) {
+        _longitude = [dic objectForKey:@"lon"];
+    }
+    if (![[dic objectForKey:@"floor"] isEqual:NSNull.null]) {
+        _floor = [dic objectForKey:@"floor"];
+    }
+    if (![[dic objectForKey:@"placeId"] isEqual:NSNull.null]) {
+        _placeId = [dic objectForKey:@"placeId"];
+    }
+    if (![[dic objectForKey:@"venueId"] isEqual:NSNull.null]) {
+        _venueId = [dic objectForKey:@"venueId"];
+    }
+    if (![[dic objectForKey:@"placeListId"] isEqual:NSNull.null]) {
+        _placeListId =[dic objectForKey:@"placeListId"];
+    }
     return self;
 }
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* positionDic = [[NSMutableDictionary alloc] init];
-    if (_placeId != nil) {
-        [positionDic setObject:[self placeId] forKey:@"placeId"];
+    @try {
+        if (_placeId != nil) {
+            [positionDic setObject:[self placeId] forKey:@"placeId"];
+        }
+        if (_venueId != nil) {
+            [positionDic setObject:[self venueId] forKey:@"venueId"];
+        }
+        if (_placeListId != nil) {
+            [positionDic setObject:[self placeListId] forKey:@"placeListId"];
+        }
+        if (_floor != nil) {
+            [positionDic setObject:[self floor] forKey:@"floor"];
+        }
+        if (_latitude != nil) {
+            [positionDic setObject:_latitude forKey:@"lat"];
+        }
+        if (_longitude != nil) {
+            [positionDic setObject:_longitude forKey:@"lon"];
+        }
     }
-    if (_venueId != nil) {
-        [positionDic setObject:[self venueId] forKey:@"venueId"];
+    @catch (NSException* e) {
+        @throw e;
     }
-    if (_placeListId != nil) {
-        [positionDic setObject:[self placeListId] forKey:@"placeListId"];
+    @finally {
+        return positionDic;
     }
-    if (_floor != nil) {
-        [positionDic setObject:[self floor] forKey:@"floor"];
-    }
-    if (_latitude != nil) {
-        [positionDic setObject:_latitude forKey:@"lat"];
-    }
-    if (_longitude != nil) {
-        [positionDic setObject:_longitude forKey:@"lon"];
-    }
-    return positionDic;
 }
 
 - (NSString*) toStringJSON {

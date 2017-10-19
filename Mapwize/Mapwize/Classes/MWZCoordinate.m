@@ -41,16 +41,30 @@
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    NSMutableArray* coords = [[NSMutableArray alloc] init];
-    [coords addObject:[NSNumber numberWithDouble:_coordinate.latitude]];
-    [coords addObject:[NSNumber numberWithDouble:_coordinate.longitude]];
-    if (_floor != nil) {
-        [dic setObject:_floor forKey:@"floor"];
+    @try {
+        [dic setObject:[NSNumber numberWithDouble:_coordinate.latitude] forKey:@"latitude"];
+        [dic setObject:[NSNumber numberWithDouble:_coordinate.longitude] forKey:@"longitude"];
+        if (_floor != nil) {
+            [dic setObject:_floor forKey:@"floor"];
+        }
     }
-    return dic;
+    @catch (NSException* e) {
+        @throw e;
+    }
+    @finally {
+        return dic;
+    }
+    
 }
 
 - (NSArray*) toArray {
+    NSMutableArray* coords = [[NSMutableArray alloc] init];
+    [coords addObject:[NSNumber numberWithDouble:_coordinate.longitude]];
+    [coords addObject:[NSNumber numberWithDouble:_coordinate.latitude]];
+    return coords;
+}
+
+- (NSArray*) toLatLongArray {
     NSMutableArray* coords = [[NSMutableArray alloc] init];
     [coords addObject:[NSNumber numberWithDouble:_coordinate.latitude]];
     [coords addObject:[NSNumber numberWithDouble:_coordinate.longitude]];
@@ -69,10 +83,19 @@
 
 - (NSDictionary*) toDirectionDictionary {
     NSMutableDictionary* dic = [[NSMutableDictionary alloc] init];
-    [dic setObject:[NSNumber numberWithDouble:_coordinate.latitude] forKey:@"lat"];
-    [dic setObject:[NSNumber numberWithDouble:_coordinate.longitude] forKey:@"lon"];
-    [dic setObject:_floor forKey:@"floor"];
-    return dic;
+    @try {
+        [dic setObject:[NSNumber numberWithDouble:_coordinate.latitude] forKey:@"lat"];
+        [dic setObject:[NSNumber numberWithDouble:_coordinate.longitude] forKey:@"lon"];
+        if (_floor != nil) {
+            [dic setObject:_floor forKey:@"floor"];
+        }
+    }
+    @catch (NSException* e) {
+        @throw e;
+    }
+    @finally {
+        return dic;
+    }
 }
 
 - (NSString*) toDirectionStringJSON {

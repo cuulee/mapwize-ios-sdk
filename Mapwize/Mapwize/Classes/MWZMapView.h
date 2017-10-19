@@ -73,6 +73,8 @@ __attribute__((deprecated("Use setUserPosition:(MWZUserPosition*) instead")));
 - (void) removePromotedPlace:(MWZPlace*) place;
 - (void) removePromotedPlaceWithId:(NSString*) placeId;
 
+- (void) setExternalPlaces: (NSArray<MWZPlace*>*) externalPlaces;
+
 - (void) addIgnoredPlace:(MWZPlace*) place;
 - (void) addIgnoredPlaceWithId:(NSString*) placeId;
 - (void) setIgnoredPlaces:(NSArray<MWZPlace*>*) places;
@@ -87,6 +89,7 @@ __attribute__((deprecated("Use addMarkerWithCoordinate:(MWZCoordinate*) instead"
 - (void) removeMarkers;
 
 - (void) startDirections: (MWZDirection*) direction;
+- (void) startDirections: (MWZDirection*) direction preventFitBounds:(BOOL) preventFitBounds;
 - (void) stopDirections;
 
 - (void) setPreferredLanguage: (NSString*) language;

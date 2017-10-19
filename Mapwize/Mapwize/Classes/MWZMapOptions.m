@@ -7,43 +7,57 @@
     self.locationEnabled = YES;
     self.beaconsEnabled = NO;
     self.showUserPositionControl = YES;
+    self.displayFloorControl = YES;
     return self;
 }
 
 - (NSDictionary*) toDictionary {
     NSMutableDictionary* optionsDic = [[NSMutableDictionary alloc] init];
-    if (_apiKey != nil) {
-        [optionsDic setObject:_apiKey forKey:@"apiKey"];
+    @try {
+        if (_apiKey != nil) {
+            [optionsDic setObject:_apiKey forKey:@"apiKey"];
+        }
+        if (_maxBounds != nil) {
+            [optionsDic setObject:[_maxBounds toArray] forKey:@"maxBounds"];
+        }
+        if (_bounds != nil) {
+            [optionsDic setObject:[_bounds toArray] forKey:@"bounds"];
+        }
+        if (_center != nil) {
+            [optionsDic setObject:[_center toLatLongArray] forKey:@"center"];
+        }
+        if (_zoom != nil) {
+            [optionsDic setObject:_zoom forKey:@"zoom"];
+        }
+        if (_floor != nil) {
+            [optionsDic setObject:_floor forKey:@"floor"];
+        }
+        if (_accessKey != nil) {
+            [optionsDic setObject:_accessKey forKey:@"accessKey"];
+        }
+        if (_language != nil) {
+            [optionsDic setObject:_language forKey:@"language"];
+        }
+        if (_minZoom != nil) {
+            [optionsDic setObject:_minZoom forKey:@"minZoom"];
+        }
+        if (_displayMarkerOptions != nil) {
+            [optionsDic setObject:[_displayMarkerOptions toDictionary] forKey:@"displayMarkerOptions"];
+        }
+        if (_mainColor != nil) {
+            [optionsDic setObject:_mainColor forKey:@"mainColor"];
+        }
+        [optionsDic setObject:@0 forKey:@"useBrowserLocation"];
+        [optionsDic setObject:[NSNumber numberWithBool:_showUserPositionControl] forKey:@"showUserPositionControl"];
+        [optionsDic setObject:[NSNumber numberWithBool:_displayFloorControl] forKey:@"displayFloorControl"];
+        [optionsDic setObject:@0 forKey:@"zoomControl"];
     }
-    if (_maxBounds != nil) {
-        [optionsDic setObject:[_maxBounds toArray] forKey:@"maxBounds"];
+    @catch (NSException* e) {
+        @throw e;
     }
-    if (_bounds != nil) {
-        [optionsDic setObject:[_bounds toArray] forKey:@"bounds"];
+    @finally {
+        return optionsDic;
     }
-    if (_center != nil) {
-        [optionsDic setObject:[_center toArray] forKey:@"center"];
-    }
-    if (_zoom != nil) {
-        [optionsDic setObject:_zoom forKey:@"zoom"];
-    }
-    if (_floor != nil) {
-        [optionsDic setObject:_floor forKey:@"floor"];
-    }
-    if (_accessKey != nil) {
-        [optionsDic setObject:_accessKey forKey:@"accessKey"];
-    }
-    if (_language != nil) {
-        [optionsDic setObject:_language forKey:@"language"];
-    }
-    if (_minZoom != nil) {
-        [optionsDic setObject:_minZoom forKey:@"minZoom"];
-    }
-    [optionsDic setObject:@0 forKey:@"useBrowserLocation"];
-    [optionsDic setObject:[NSNumber numberWithBool:_showUserPositionControl] forKey:@"showUserPositionControl"];
-    [optionsDic setObject:@0 forKey:@"zoomControl"];
-    
-    return optionsDic;
 }
 
 - (NSString*) toJSONString {

@@ -15,37 +15,58 @@
 
 - (instancetype)initFromDictionary:(NSDictionary*)dic {
     self = [super init];
-    _latitude = [[dic objectForKey:@"latitude"] doubleValue];
-    _longitude = [[dic objectForKey:@"longitude"] doubleValue];
-    _floor = [dic objectForKey:@"floor"];
-    _accuracy = [dic objectForKey:@"accuracy"];
-    _validUntil = [dic objectForKey:@"validUntil"];
-    _validity = [dic objectForKey:@"validity"];
-    _source = [dic objectForKey:@"source"];
+    if (![[dic objectForKey:@"latitude"] isEqual:NSNull.null]) {
+        _latitude = [[dic objectForKey:@"latitude"] doubleValue];
+    }
+    if (![[dic objectForKey:@"longitude"] isEqual:NSNull.null]) {
+        _longitude = [[dic objectForKey:@"longitude"] doubleValue];
+    }
+    if (![[dic objectForKey:@"floor"] isEqual:NSNull.null]) {
+        _floor = [dic objectForKey:@"floor"];
+    }
+    if (![[dic objectForKey:@"accuracy"] isEqual:NSNull.null]) {
+        _accuracy = [dic objectForKey:@"accuracy"];
+    }
+    if (![[dic objectForKey:@"validUntil"] isEqual:NSNull.null]) {
+        _validUntil = [dic objectForKey:@"validUntil"];
+    }
+    if (![[dic objectForKey:@"validity"] isEqual:NSNull.null]) {
+        _validity = [dic objectForKey:@"validity"];
+    }
+    if (![[dic objectForKey:@"source"] isEqual:NSNull.null]) {
+        _source = [dic objectForKey:@"source"];
+    }
     return self;
 }
 
 - (NSString*) toStringJSON {
     NSMutableDictionary* userPositionDic = [[NSMutableDictionary alloc] init];
-    [userPositionDic setObject:@(_latitude) forKey:@"latitude"];
-    [userPositionDic setObject:@(_longitude) forKey:@"longitude"];
-    if (_floor != nil) {
-        [userPositionDic setObject:_floor forKey:@"floor"];
+    NSString* userPositionString = @"{}";
+    @try {
+        [userPositionDic setObject:@(_latitude) forKey:@"latitude"];
+        [userPositionDic setObject:@(_longitude) forKey:@"longitude"];
+        if (_floor != nil) {
+            [userPositionDic setObject:_floor forKey:@"floor"];
+        }
+        if (_accuracy != nil) {
+            [userPositionDic setObject:_accuracy forKey:@"accuracy"];
+        }
+        if (_validity != nil) {
+            [userPositionDic setObject:[self validity] forKey:@"validity"];
+        }
+        if (_source != nil) {
+            [userPositionDic setObject:[self source] forKey:@"source"];
+        }
+        
+        NSData *userPositionJSON = [NSJSONSerialization dataWithJSONObject:userPositionDic options:(NSJSONWritingOptions) 0 error:nil];
+        userPositionString = [[NSString alloc] initWithData:userPositionJSON encoding:NSUTF8StringEncoding];
     }
-    if (_accuracy != nil) {
-        [userPositionDic setObject:_accuracy forKey:@"accuracy"];
+    @catch (NSException* e) {
+        @throw e;
     }
-    if (_validity != nil) {
-        [userPositionDic setObject:[self validity] forKey:@"validity"];
+    @finally {
+        return userPositionString;
     }
-    if (_source != nil) {
-        [userPositionDic setObject:[self source] forKey:@"source"];
-    }
-    
-    NSData *userPositionJSON = [NSJSONSerialization dataWithJSONObject:userPositionDic options:(NSJSONWritingOptions) 0 error:nil];
-    NSString* userPositionString = [[NSString alloc] initWithData:userPositionJSON encoding:NSUTF8StringEncoding];
-    
-    return userPositionString;
 }
 
 - (NSString *)description {
