@@ -335,9 +335,9 @@ To request a direction from one place to another, possibly with intermediate way
 
 - (NSURLSessionDataTask *)getDirectionsFrom:(id<MWZDirectionPoint>) from to:(id<MWZDirectionPoint>) to by: (NSArray<id<MWZDirectionPoint>>*) waypoints withOptions:(MWZDirectionOptions*) options success:(void (^)(MWZDirection *direction))success failure:(void (^)(NSError *error))failure;
 
-from : The starting point for the direction. Can be a MWZPlace, MWZCoordinate or MWZUserPosition.
-to : The destination point. Can be MWZPlace, MWZPlaceList, MWZCoordinate or MWZUserPosition
-waypoint : An array of intermediate direction point. Can contains MWZPlace, MWZCoordinate or MWZUserPosition
+from : The starting point for the direction. Can be a MWZPlace, MWZCoordinate, MWZCoordinateInVenue or MWZUserPosition.
+to : The destination point. Can be MWZPlace, MWZPlaceList, MWZCoordinate, MWZCoordinateInVenue or MWZUserPosition
+waypoint : An array of intermediate direction point. Can contains MWZPlace, MWZCoordinate, MWZCoordinateInVenue or MWZUserPosition
 
 - (NSURLSessionDataTask *)getDirectionsFrom:(id<MWZDirectionPoint>) from oneOfTo:(NSArray<id<MWZDirectionPoint>>*) to by: (NSArray<id<MWZDirectionPoint>>*) waypoints withOptions:(MWZDirectionOptions*) options success:(void (^)(MWZDirection *direction))success failure:(void (^)(NSError *error))failure;
 

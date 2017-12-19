@@ -5,7 +5,7 @@
 #import "MWZParser.h"
 
 #define SERVER_URL @"https://www.mapwize.io"
-#define IOS_SDK_VERSION @"2.3.7"
+#define IOS_SDK_VERSION @"2.4.0"
 #define IOS_SDK_NAME @"IOS SDK"
 
 @implementation MWZMapView {
@@ -145,6 +145,13 @@
 - (void)webView:(WKWebView *)webView didFailProvisionalNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     if ([self.delegate respondsToSelector:@selector(map:didFailWithError:)]) {
         [self.delegate map:self didFailWithError:error];
+    }
+}
+
+- (void) willMoveToSuperview: (UIView *) newSuperview{
+    if (newSuperview == nil){
+        [_webview removeFromSuperview];
+        _webview = nil;
     }
 }
 

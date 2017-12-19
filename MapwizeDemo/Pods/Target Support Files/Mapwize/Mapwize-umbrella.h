@@ -14,6 +14,7 @@
 #import "MWZApiManager.h"
 #import "MWZBounds.h"
 #import "MWZCoordinate.h"
+#import "MWZCoordinateInVenue.h"
 #import "MWZCustomMarkerOptions.h"
 #import "MWZDirection.h"
 #import "MWZDirectionOptions.h"

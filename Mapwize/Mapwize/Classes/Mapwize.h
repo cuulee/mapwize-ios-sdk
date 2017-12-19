@@ -11,6 +11,7 @@ FOUNDATION_EXPORT const unsigned char MapwizeVersionString[];
 #import "MWZApiManager.h"
 #import "MWZBounds.h"
 #import "MWZCoordinate.h"
+#import "MWZCoordinateInVenue.h"
 #import "MWZDirection.h"
 #import "MWZDirectionOptions.h"
 #import "MWZDirectionPoint.h"
