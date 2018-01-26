@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 2.4.1
+
+- Fixed circular import in MWZCoordinatesInVenue
+
 ## Version 2.4.0
 
 - Floors can now have decimal (Double) values, handy for mezzanines or intermediate levels

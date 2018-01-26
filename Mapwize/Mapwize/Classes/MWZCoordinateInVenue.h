@@ -1,4 +1,4 @@
-#import <Mapwize/Mapwize.h>
+#import "MWZCoordinate.h"
 
 @interface MWZCoordinateInVenue : MWZCoordinate
 

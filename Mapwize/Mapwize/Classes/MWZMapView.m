@@ -5,7 +5,7 @@
 #import "MWZParser.h"
 
 #define SERVER_URL @"https://www.mapwize.io"
-#define IOS_SDK_VERSION @"2.4.0"
+#define IOS_SDK_VERSION @"2.4.1"
 #define IOS_SDK_NAME @"IOS SDK"
 
 @implementation MWZMapView {
