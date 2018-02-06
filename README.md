@@ -1,4 +1,4 @@
-# Mapwize
+# [deprecated] Mapwize iOS SDK using Webview rendering
 
 [![Version](https://img.shields.io/cocoapods/v/Mapwize.svg?style=flat)](http://cocoapods.org/pods/Mapwize)
 [![License](https://img.shields.io/cocoapods/l/Mapwize.svg?style=flat)](http://cocoapods.org/pods/Mapwize)
@@ -7,6 +7,10 @@
 This is the Mapwize iOS SDK, version 2.3.x.
 
 It allows you to display and interact with Mapwize venue maps.
+
+## New SDK available
+
+**This SDK remains functional and fully supported by Mapwize. However, a new SDK built on Mapbox GL is now available and all developers are invited to use it instead. Details are available at [docs.mapwize.io](https://docs.mapwize.io).**
 
 ## Requirements
 
