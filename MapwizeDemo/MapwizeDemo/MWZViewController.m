@@ -46,10 +46,6 @@
             MWZMapOptions* options = [[MWZMapOptions alloc] init];
             options.apiKey = @"1f04d780dc30b774c0c10f53e3c7d4ea"; // PASTE YOU API KEY HERE !!! This is a demo key. It is not allowed to use it for production. The key might change at any time without notice.
             options.locationEnabled = true;
-            options.maxBounds = maxBounds;
-            options.accessKey = @"demo";
-            options.beaconsEnabled = true;
-            options.minZoom = minZoom;
             //Sets the delegate to receive events
             _myMapView.delegate = self;
             
