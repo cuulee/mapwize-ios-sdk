@@ -148,7 +148,7 @@
     options.isAccessible = TRUE;
 
     [_apiManager getDirectionsFrom:from to:to by:nil withOptions:options success:^(MWZDirection *direction) {
-        [_mapController startDirections: direction preventFitBounds:YES];
+        [_mapController startDirections: direction];
     } failure:^(NSError *error) {
         
         UIAlertController *alertController = [UIAlertController

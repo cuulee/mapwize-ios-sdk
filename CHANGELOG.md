@@ -1,5 +1,9 @@
 # CHANGELOG
 
+## Version 2.3.8
+
+- Added possibility to add MWZServerUrl in info.plist to redefine server url
+
 ## Version 2.3.7
 
 - Added startDirections: (MWZDirection*) direction preventFitBounds:(BOOL) preventFitBounds

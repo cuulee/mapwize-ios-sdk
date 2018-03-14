@@ -159,7 +159,7 @@
 		1778CBC828B26AE88ABD207A89CEB9B9 /* MWZDirection.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZDirection.h; sourceTree = "<group>"; };
 		1EC9DA925EFC3AFA0D77F6FAD96AECCB /* MWZPlaceType.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZPlaceType.h; sourceTree = "<group>"; };
 		1FC3B0916C90C5ECD8E6E1E1283608BC /* MWZDirectionResponsePoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZDirectionResponsePoint.m; sourceTree = "<group>"; };
-		20B2E3D4A22C209A85A87580CD939170 /* Mapwize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Mapwize.framework; path = Mapwize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		20B2E3D4A22C209A85A87580CD939170 /* Mapwize.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Mapwize.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		25ECD12E01E3BD1689BAC2E0ADD54910 /* Pods-MapwizeDemo-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MapwizeDemo-acknowledgements.plist"; sourceTree = "<group>"; };
 		26519F6E9BD97243E41A43C1E200D1D2 /* MWZDirection.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZDirection.m; sourceTree = "<group>"; };
 		31421BED59C8FE2DFEFD4457219B946A /* AFSecurityPolicy.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFSecurityPolicy.h; path = AFNetworking/AFSecurityPolicy.h; sourceTree = "<group>"; };
@@ -174,7 +174,7 @@
 		44388EB9841B8ABE416C274F08F4CAFF /* Pods-MapwizeDemo-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MapwizeDemo-frameworks.sh"; sourceTree = "<group>"; };
 		4491EA99D9B66C1E06B539A00A40181B /* MWZRoute.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZRoute.m; sourceTree = "<group>"; };
 		456884974FCD65674016A0D296E8D846 /* AFNetworkReachabilityManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = AFNetworkReachabilityManager.h; path = AFNetworking/AFNetworkReachabilityManager.h; sourceTree = "<group>"; };
-		475D4FEB23ED1C629C82581184081AAC /* Pods-MapwizeDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-MapwizeDemo.modulemap"; sourceTree = "<group>"; };
+		475D4FEB23ED1C629C82581184081AAC /* Pods-MapwizeDemo.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MapwizeDemo.modulemap"; sourceTree = "<group>"; };
 		479E7DA8DF8B7A0776EB6CE5B82F7E44 /* MWZUserPosition.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZUserPosition.m; sourceTree = "<group>"; };
 		495443C7D27390399DDDAB4E65150D9A /* MWZSessionManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZSessionManager.h; sourceTree = "<group>"; };
 		4DDDAFE16F1C06EFAE434D84600766A8 /* UIRefreshControl+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIRefreshControl+AFNetworking.m"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.m"; sourceTree = "<group>"; };
@@ -185,7 +185,7 @@
 		55CFAC257F63EAFFD68D0706345ABEB6 /* Pods-MapwizeDemo-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MapwizeDemo-umbrella.h"; sourceTree = "<group>"; };
 		56F156CAB6D89363DD03F25D3B669E4F /* MWZGeometryPoint.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZGeometryPoint.m; sourceTree = "<group>"; };
 		58E9748627A15D968BC2C255514704F0 /* MWZParser.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZParser.h; sourceTree = "<group>"; };
-		5D7886956BF59AA7BEA0B1E917F004C5 /* mwzmap.html */ = {isa = PBXFileReference; includeInIndex = 1; path = mwzmap.html; sourceTree = "<group>"; };
+		5D7886956BF59AA7BEA0B1E917F004C5 /* mwzmap.html */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.html; path = mwzmap.html; sourceTree = "<group>"; };
 		60FDE8718B3C2608D30D734C8A15D3D3 /* UIWebView+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIWebView+AFNetworking.h"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.h"; sourceTree = "<group>"; };
 		641E912D34C2E34A7FBA62B3E2E616C8 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		664652F0E3EB8DC09BD348B406E89BB8 /* MWZGeometryPolygon.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZGeometryPolygon.m; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 		6B4226955277CECB62CD2F5670D9DA5E /* MWZCustomMarkerOptions.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZCustomMarkerOptions.m; sourceTree = "<group>"; };
 		6CC4C8AA51FEB84F0BE6ABE0BA401CD4 /* Mapwize-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Mapwize-prefix.pch"; sourceTree = "<group>"; };
 		6D5C7FE9FC80850F2A537AD87C9F037C /* ResourceBundle-Mapwize-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "ResourceBundle-Mapwize-Info.plist"; sourceTree = "<group>"; };
-		6F9E52C7D5B6C58AA11AA1A5E4CC330E /* Mapwize.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; name = Mapwize.bundle; path = Mapwize.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		6F9E52C7D5B6C58AA11AA1A5E4CC330E /* Mapwize.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Mapwize.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		709AD854F2A0ACE47084484E78F347EC /* MWZGeometryPoint.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZGeometryPoint.h; sourceTree = "<group>"; };
 		709D9C25FA93DAF7371D2A9123AF67C9 /* MWZPlaceList.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZPlaceList.h; sourceTree = "<group>"; };
 		714F25458E0E110698747DD4F54A19C7 /* MWZApiManager.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZApiManager.h; sourceTree = "<group>"; };
@@ -203,15 +203,15 @@
 		766A8DB58B1DEC0150E36AD843786FF3 /* UIWebView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIWebView+AFNetworking.m"; path = "UIKit+AFNetworking/UIWebView+AFNetworking.m"; sourceTree = "<group>"; };
 		76E336D4C42CE350207CB8781CD4050F /* MWZPlaceType.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZPlaceType.m; sourceTree = "<group>"; };
 		7BE00AD09DFDC149DB3B1E19D0AB1F30 /* MWZDirectionOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZDirectionOptions.h; sourceTree = "<group>"; };
-		7FEBEAD524FBA9CB3333D35635D65A03 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = AFNetworking.modulemap; sourceTree = "<group>"; };
-		83176616B7EB79C5DFD9AB6931536BC3 /* Pods_MapwizeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_MapwizeDemo.framework; path = "Pods-MapwizeDemo.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FEBEAD524FBA9CB3333D35635D65A03 /* AFNetworking.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = AFNetworking.modulemap; sourceTree = "<group>"; };
+		83176616B7EB79C5DFD9AB6931536BC3 /* Pods_MapwizeDemo.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MapwizeDemo.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		85053C33AB5B93D2852851105AAA32B1 /* UIProgressView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIProgressView+AFNetworking.m"; path = "UIKit+AFNetworking/UIProgressView+AFNetworking.m"; sourceTree = "<group>"; };
 		86F42B01C0184F7993752BA21574CFB4 /* AFNetworkReachabilityManager.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = AFNetworkReachabilityManager.m; path = AFNetworking/AFNetworkReachabilityManager.m; sourceTree = "<group>"; };
 		87463A8F055EEE85DD10593D0C8721B2 /* UIKit+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIKit+AFNetworking.h"; path = "UIKit+AFNetworking/UIKit+AFNetworking.h"; sourceTree = "<group>"; };
 		8803FF79F641AB847D61C8CE62F20B11 /* MWZCoordinate.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZCoordinate.h; sourceTree = "<group>"; };
 		8AB78849F989EF2B174964354C7CA40C /* Pods-MapwizeDemo-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MapwizeDemo-acknowledgements.markdown"; sourceTree = "<group>"; };
 		907EBD05C24D3EC8D81F3A5FEE84121C /* UIButton+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIButton+AFNetworking.m"; path = "UIKit+AFNetworking/UIButton+AFNetworking.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		96EAD4DD74D72C870BF580656755B397 /* MWZMeasurement.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZMeasurement.h; sourceTree = "<group>"; };
 		98A189FDEF0AD08BC5DC357020B8DB5A /* AFNetworking-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "AFNetworking-dummy.m"; sourceTree = "<group>"; };
 		996D38C17E48CD16703CD9A31F9F6EC7 /* UIRefreshControl+AFNetworking.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIRefreshControl+AFNetworking.h"; path = "UIKit+AFNetworking/UIRefreshControl+AFNetworking.h"; sourceTree = "<group>"; };
@@ -249,7 +249,7 @@
 		D799B790EE4F98C4007C71A8BABF3A9E /* MWZTranslation.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZTranslation.h; sourceTree = "<group>"; };
 		D8DE96DD2F8C602F80B34718D03CE556 /* MWZMapView.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZMapView.h; sourceTree = "<group>"; };
 		D93491D56F9EA3A655656914C40EB3D8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		D9D4E5F0C01AAB4E1C9AB1364141D682 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = AFNetworking.framework; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D9D4E5F0C01AAB4E1C9AB1364141D682 /* AFNetworking.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AFNetworking.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA1F7D4040DEF4A087159634370968FC /* MWZStyle.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZStyle.h; sourceTree = "<group>"; };
 		DAD4CC7B7F669E908EC00BC9F04CCEE7 /* MWZPlace.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = MWZPlace.m; sourceTree = "<group>"; };
 		DDDB207413A2F8B1187B7B10BD171AB5 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.3.sdk/System/Library/Frameworks/MobileCoreServices.framework; sourceTree = DEVELOPER_DIR; };
@@ -257,7 +257,7 @@
 		E287540F6AAFBD6834BFA37866AE26DA /* UIImageView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIImageView+AFNetworking.m"; path = "UIKit+AFNetworking/UIImageView+AFNetworking.m"; sourceTree = "<group>"; };
 		E363399C8F7BCAD4FC7BD1CDBF97CD10 /* AFNetworking-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "AFNetworking-umbrella.h"; sourceTree = "<group>"; };
 		E49CCBC2B785DB7F0E659A2EDB118677 /* Mapwize.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = Mapwize.h; sourceTree = "<group>"; };
-		E4B4F1FD9725786DEF5304FAA31D7AD4 /* Mapwize.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = Mapwize.modulemap; sourceTree = "<group>"; };
+		E4B4F1FD9725786DEF5304FAA31D7AD4 /* Mapwize.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Mapwize.modulemap; sourceTree = "<group>"; };
 		E6E0C171634A123A0E7FC39F44FA05D2 /* UIActivityIndicatorView+AFNetworking.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIActivityIndicatorView+AFNetworking.m"; path = "UIKit+AFNetworking/UIActivityIndicatorView+AFNetworking.m"; sourceTree = "<group>"; };
 		EA0373E38D1F6CD4B89804D6FAA2DC58 /* MWZCustomMarkerOptions.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZCustomMarkerOptions.h; sourceTree = "<group>"; };
 		EB87EDACBEE3CF444F774E5AA8F151E9 /* MWZGeometryPolygon.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = MWZGeometryPolygon.h; sourceTree = "<group>"; };
@@ -341,7 +341,6 @@
 			children = (
 				5D7886956BF59AA7BEA0B1E917F004C5 /* mwzmap.html */,
 			);
-			name = Resources;
 			path = Resources;
 			sourceTree = "<group>";
 		};
@@ -350,7 +349,6 @@
 			children = (
 				EA132850BD5AF4DF1F76780F85470530 /* Classes */,
 			);
-			name = Mapwize;
 			path = Mapwize;
 			sourceTree = "<group>";
 		};
@@ -463,7 +461,6 @@
 				C45D249FB5DB8E034FDE4F14853D1D8B /* Support Files */,
 				C015C5E223184310A507F6F6D795AB1F /* UIKit */,
 			);
-			name = AFNetworking;
 			path = AFNetworking;
 			sourceTree = "<group>";
 		};
@@ -472,7 +469,6 @@
 			children = (
 				EAFCDAEBBBCD5404DFDCCB005CD06530 /* Mapwize */,
 			);
-			name = Mapwize;
 			path = Mapwize;
 			sourceTree = "<group>";
 		};
@@ -499,7 +495,6 @@
 			children = (
 				3950D02CAAF26F789B203ACA9BE7053F /* Mapwize */,
 			);
-			name = Mapwize;
 			path = Mapwize;
 			sourceTree = "<group>";
 		};
@@ -622,7 +617,6 @@
 				09A39EFEBC966344E59F335B4C735644 /* MWZVenue.h */,
 				417BB6A11BF783229AF6CB81AC960ADB /* MWZVenue.m */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -631,7 +625,6 @@
 			children = (
 				20859685B57534FB12A30F5F6634F631 /* Resources */,
 			);
-			name = Mapwize;
 			path = Mapwize;
 			sourceTree = "<group>";
 		};

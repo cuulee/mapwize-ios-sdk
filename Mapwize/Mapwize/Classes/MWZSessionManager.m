@@ -1,11 +1,17 @@
 #import "MWZSessionManager.h"
 
-static NSString *const kBaseURL = @"https://www.mapwize.io";
-
 @implementation MWZSessionManager
 
 - (id)init {
-    self = [super initWithBaseURL:[NSURL URLWithString:kBaseURL]];
+    
+    NSDictionary *dict = [[NSBundle mainBundle] infoDictionary];
+    NSString *serverUrl = dict[@"MWZServerUrl"];
+    if (!serverUrl) {
+        serverUrl = @"https://api.mapwize.io";
+    }
+    
+    self = [super initWithBaseURL:[NSURL URLWithString:serverUrl]];
+    
     if(!self) return nil;
     
     self.responseSerializer = [AFJSONResponseSerializer serializer];

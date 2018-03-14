@@ -4,8 +4,7 @@
 #import "MWZMapOptions.h"
 #import "MWZParser.h"
 
-#define SERVER_URL @"https://www.mapwize.io"
-#define IOS_SDK_VERSION @"2.3.7"
+#define IOS_SDK_VERSION @"2.3.8"
 #define IOS_SDK_NAME @"IOS SDK"
 
 @implementation MWZMapView {
@@ -22,6 +21,7 @@
     MWZMapOptions* _options;
     NSMutableDictionary* callbackMemory;
     NSMutableDictionary* _universesByVenues;
+    NSString* SERVER_URL;
 
 }
 
@@ -31,6 +31,16 @@
     callbackMemory = [[NSMutableDictionary alloc] init];
     _universesByVenues = [[NSMutableDictionary alloc] init];
 
+    NSDictionary *dict = [[NSBundle mainBundle] infoDictionary];
+    NSString *serverUrl = dict[@"MWZServerUrl"];
+    
+    if (serverUrl) {
+        SERVER_URL = serverUrl;
+    }
+    else {
+        SERVER_URL = @"https://api.mapwize.io";
+    }
+    
     /*
      * Loads the webview
      */
